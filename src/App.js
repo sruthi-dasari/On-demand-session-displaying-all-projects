@@ -106,6 +106,7 @@ class App extends Component {
 
   render() {
     const {filteredProjects} = this.getFilteredProjects()
+    const activeTabId = this.state
     return (
       <div className="app-container">
         <Header />
@@ -121,6 +122,7 @@ class App extends Component {
               key={tabDetails.tabId}
               tabDetails={tabDetails}
               updateActiveTabId={this.updateActiveTabId}
+              isActive={tabDetails.tabId === activeTabId}
             />
           ))}
         </ul>
